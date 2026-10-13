@@ -1,0 +1,43 @@
+{
+    "adapter_path": "adapters",
+    "batch_size": 2,
+    "clear_cache_threshold": 0,
+    "config": "/Users/youngilchung/study/finetuning_poc/configs/lora_config.yaml",
+    "data": "data",
+    "fine_tune_type": "lora",
+    "grad_accumulation_steps": 1,
+    "grad_checkpoint": false,
+    "iters": 120,
+    "learning_rate": 0.0002,
+    "lora_parameters": {
+        "rank": 8,
+        "alpha": 16,
+        "dropout": 0.05,
+        "scale": 10.0
+    },
+    "lr_schedule": null,
+    "mask_prompt": true,
+    "max_seq_length": 1024,
+    "model": "lmstudio-community/gemma-4-E2B-it-MLX-4bit",
+    "num_layers": 16,
+    "optimizer": "adam",
+    "optimizer_config": {
+        "adam": {},
+        "adamw": {},
+        "muon": {},
+        "sgd": {},
+        "adafactor": {}
+    },
+    "project_name": null,
+    "report_to": null,
+    "resume_adapter_file": null,
+    "save_every": 60,
+    "seed": 42,
+    "steps_per_eval": 30,
+    "steps_per_report": 10,
+    "test": false,
+    "test_batches": 500,
+    "train": true,
+    "trust_remote_code": false,
+    "val_batches": 2
+}

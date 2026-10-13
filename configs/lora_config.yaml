@@ -1,0 +1,26 @@
+# LoRA Fine-Tuning 설정 파일 (Apple Silicon MLX 최적화)
+
+model: "lmstudio-community/gemma-4-E2B-it-MLX-4bit"
+train: true
+data: "data"
+seed: 42
+
+# LoRA 하이퍼파라미터
+# Gemma 4 E2B 대상 Attention 프로젝션(q_proj, v_proj) 학습
+lora_parameters:
+  rank: 8
+  alpha: 16
+  dropout: 0.05
+  scale: 10.0
+
+# 학습 하이퍼파라미터
+batch_size: 2
+iters: 120              # 16개 데이터 기준 약 15 에포크 (M4 Pro에서 약 1~2분 소요)
+val_batches: 2
+steps_per_report: 10
+steps_per_eval: 30
+save_every: 60
+learning_rate: 2e-4
+adapter_path: "adapters"
+max_seq_length: 1024
+mask_prompt: true
